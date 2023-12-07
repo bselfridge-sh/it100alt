@@ -285,7 +285,7 @@ echo "<pre>\n\n";
         if ($x == 4) {
           break;
         }
-        echo "The number is: $x <br>";
+        echo "The number is: $x \n";
         $x++;
       }
 
@@ -297,9 +297,21 @@ echo "<pre>\n\n";
         $x++;
         continue;
     }
-    echo "The number is: $x <br>";
+    echo "The number is: $x \n";
     $x++;
     }
+
+
+
+// Date and Time
+    echo "Today is " . date("Y/m/d") . "\n";
+    echo "Today is " . date("Y.m.d") . "\n";
+    echo "Today is " . date("Y-m-d") . "\n";
+    echo "Today is " . date("l");
+
+
+
+
 
 
 
@@ -318,6 +330,75 @@ echo "<pre>\n\n";
 
 
 
+
+
+
+    $myfile = fopen("webinfo.txt", "r") or die("Unable to open file!");
+    echo fread($myfile,filesize("webinfo.txt"));
+    fclose($myfile);
+        // r	Open a file for read only. File pointer starts at the beginning of the file
+        // w	Open a file for write only. Erases the contents of the file or creates a new file if it doesn't exist. File pointer starts at the beginning of the file
+        // a	Open a file for write only. The existing data in file is preserved. File pointer starts at the end of the file. Creates a new file if the file doesn't exist
+        // x	Creates a new file for write only. Returns FALSE and an error if file already exists
+        // r+	Open a file for read/write. File pointer starts at the beginning of the file
+        // w+	Open a file for read/write. Erases the contents of the file or creates a new file if it doesn't exist. File pointer starts at the beginning of the file
+        // a+	Open a file for read/write. The existing data in file is preserved. File pointer starts at the end of the file. Creates a new file if the file doesn't exist
+        // x+	Creates a new file for read/write. Returns FALSE and an error if file already exists
+
+
+// read entire file
+    $myfile = fopen("webinfo.txt", "r") or die("Unable to open file!");
+    echo fgets($myfile);
+    fclose($myfile);
+
+//read single line
+    $myfile = fopen("webinfo.txt", "r") or die("Unable to open file!");
+    // Output one line until end-of-file
+    while(!feof($myfile)) {
+      echo fgets($myfile) . "\n";
+    }
+    fclose($myfile);
+
+
+
+
+//Read single character to end
+    $myfile = fopen("webinfo.txt", "r") or die("Unable to open file!");
+    // Output one character until end-of-file
+    while(!feof($myfile)) {
+      echo fgetc($myfile);
+    }
+    fclose($myfile);
+
+
+
+// write a file
+    $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+    $txt = "John Doe\n";
+    fwrite($myfile, $txt);
+    $txt = "Jane Doe\n";
+    fwrite($myfile, $txt);
+    fclose($myfile);
+    
+
+
+//overwrite a file
+    $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+    $txt = "Mickey Mouse\n";
+    fwrite($myfile, $txt);
+    $txt = "Minnie Mouse\n";
+    fwrite($myfile, $txt);
+    fclose($myfile);
+    
+    
+
+// Append to a file
+    $myfile = fopen("newfile.txt", "a") or die("Unable to open file!");
+    $txt = "Donald Duck\n";
+    fwrite($myfile, $txt);
+    $txt = "Goofy Goof\n";
+    fwrite($myfile, $txt);
+    fclose($myfile);
 
 
 
