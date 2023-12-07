@@ -1,3 +1,7 @@
+<?php
+// NO PHP, BUT we need to create a sub-folder called upload in the it100alt1 root to upload to.
+?>
+
 <!DOCTYPE html>
 <html>
 <body>
