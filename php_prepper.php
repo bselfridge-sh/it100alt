@@ -198,6 +198,135 @@ echo "<pre>\n\n";
 
 
 
+// If .. Else .. ElseIF
+    $t = date("H");
+
+    if ($t < "10") {
+    echo "Have a good morning!";
+    } elseif ($t < "20") {
+    echo "Have a good day!";
+    } else {
+    echo "Have a good night!";
+    }
+
+
+
+
+
+
+// Switch Statements
+    $favcolor = "red";
+
+    switch ($favcolor) {
+    case "red":
+        echo "Your favorite color is red!\n\n";
+        break;
+    case "blue":
+        echo "Your favorite color is blue!\n\n";
+        break;
+    case "green":
+        echo "Your favorite color is green!\n\n";
+        break;
+    default:
+        echo "Your favorite color is neither red, blue, nor green!\n\n";
+    }
+
+
+
+
+
+
+
+// LOOPS
+    //While Loops
+    $x = 0;
+
+    while($x <= 100) {
+        echo "The number is: $x \n";
+        $x+=10;
+        }
+
+    //DO While Loops
+    $x = 6;
+
+    do {
+        echo "The number is: $x \n";
+        $x++;
+    } while ($x <= 5);
+
+
+    // For Loops
+    for ($x = 0; $x <= 100; $x+=10) {
+        echo "The number is: $x \n";
+      }
+
+    
+    // Foreach Loops
+      $age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+
+      foreach($age as $x => $val) {
+        echo "$x = $val\n";
+      }
+
+
+    // Continue / Break Statements
+    for ($x = 0; $x < 10; $x++) {
+        if ($x == 4) {
+          continue;
+        }
+        echo "The number is: $x \n";
+      }
+
+
+
+
+      $x = 0;
+      while($x < 10) {
+        if ($x == 4) {
+          break;
+        }
+        echo "The number is: $x <br>";
+        $x++;
+      }
+
+
+
+    $x = 0;
+    while($x < 10) {
+    if ($x == 4) {
+        $x++;
+        continue;
+    }
+    echo "The number is: $x <br>";
+    $x++;
+    }
+
+
+
+
+// File Handling
+    // File on the machine: webinfo.txt (contents below)
+        // AJAX = Asynchronous JavaScript and XML
+        // CSS = Cascading Style Sheets
+        // HTML = Hyper Text Markup Language
+        // PHP = PHP Hypertext Preprocessor
+        // SQL = Structured Query Language
+        // SVG = Scalable Vector Graphics
+        // XML = EXtensible Markup Language
+
+    echo readfile("webinfo.txt");
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Define Function to be lazy with \n
